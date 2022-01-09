@@ -3,10 +3,10 @@ def direction(facing, turn):
     
     if facing not in points:
         return 'Invalid direction parameter!'
-    if turn % 45 > 0:
+    if turn % 45 != 0:
         return 'Invalid turn parameter!'
 
     index = points.index(facing)
-    position = (index + int(turn / 45)) % len(points)
+    position = (index + turn // 45) % len(points)
 
     return points[position]
